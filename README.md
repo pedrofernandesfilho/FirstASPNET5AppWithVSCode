@@ -1,1 +1,1 @@
-# Welcome to my first ASP.NET 5 Web App with Visual Studio Code
+# Welcome to my first ASP.NET 5 App with Visual Studio Code
