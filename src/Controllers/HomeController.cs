@@ -1,7 +1,7 @@
-using FirstASPNET5WebAppWithVSCode.Models;
+using FirstASPNET5AppWithVSCode.Models;
 using Microsoft.AspNet.Mvc;
 
-namespace FirstASPNET5WebAppWithVSCode.Controllers
+namespace FirstASPNET5AppWithVSCode.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,4 +1,4 @@
-namespace FirstASPNET5WebAppWithVSCode.Models
+namespace FirstASPNET5AppWithVSCode.Models
 {
 	public class MenuItem
 	{

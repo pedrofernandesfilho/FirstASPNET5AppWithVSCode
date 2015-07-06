@@ -6,7 +6,7 @@ using Microsoft.Framework.DependencyInjection;
 using Microsoft.Framework.Logging;
 using Microsoft.Framework.Runtime;
 
-namespace FirstASPNET5WebAppWithVSCode
+namespace FirstASPNET5AppWithVSCode
 {
     public class Startup
     {
