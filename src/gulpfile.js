@@ -1,11 +1,16 @@
 /// <binding Clean='clean' />
 'use strict';
+
+/* REQUIRE */
+
 var gulp = require("gulp"),
-  rimraf = require("rimraf"),
-  concat = require("gulp-concat"),
-  cssmin = require("gulp-cssmin"),
-  uglify = require("gulp-uglify"),
-  project = require("./project.json");
+    rimraf = require("rimraf"),
+    concat = require("gulp-concat"),
+    cssmin = require("gulp-cssmin"),
+    uglify = require("gulp-uglify"),
+    project = require("./project.json");
+
+/* PATH */
 
 var paths = {
   webroot: "./" + project.webroot + "/"
@@ -18,6 +23,8 @@ paths.minCss = paths.webroot + "css/**/*.min.css";
 paths.concatJsDest = paths.webroot + "js/site.min.js";
 paths.concatCssDest = paths.webroot + "css/site.min.css";
 
+/* CLEAN TASKS */
+
 gulp.task("clean:js", function(cb) {
   rimraf(paths.concatJsDest, cb);
 });
@@ -27,6 +34,8 @@ gulp.task("clean:css", function(cb) {
 });
 
 gulp.task("clean", ["clean:js", "clean:css"]);
+
+/* MIN TASKS */
 
 gulp.task("min:js", function() {
   gulp.src([paths.js, "!" + paths.minJs], {

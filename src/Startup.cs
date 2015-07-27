@@ -10,16 +10,17 @@ namespace FirstASPNET5AppWithVSCode
 {
     public class Startup
     {
+        public IConfiguration Configuration { get; set; }
+        
         public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
         {
             // Setup configuration sources.
             var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
                 .AddJsonFile("config.json")
                 .AddEnvironmentVariables();
+                
             Configuration = builder.Build();
         }
-
-        public IConfiguration Configuration { get; set; }
 
         // This method gets called by the runtime.
         public void ConfigureServices(IServiceCollection services)
