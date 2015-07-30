@@ -1,6 +1,8 @@
 {
-  "name": "FirstASPNET5WebAppWithVSCode",
+  "name": "FirstASPNET5AppWithVSCode",
   "version": "0.0.0",
+  "description": "My first ASPNET5 App with VS Code",
+  "readme": "../README.md",
   "devDependencies": {
     "gulp": "3.8.11",
     "gulp-concat": "2.5.2",

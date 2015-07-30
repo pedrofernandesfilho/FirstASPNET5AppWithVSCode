@@ -13,7 +13,9 @@ var gulp = require("gulp"),
 /* PATH */
 
 var paths = {
-  webroot: "./" + project.webroot + "/"
+    webroot: "./" + project.webroot + "/",
+    bower: './bower_components',
+    lib: './wwwroot/lib'
 };
 
 paths.js = paths.webroot + "js/**/*.js";
@@ -35,6 +37,10 @@ gulp.task("clean:css", function(cb) {
 
 gulp.task("clean", ["clean:js", "clean:css"]);
 
+gulp.task('assets:clean', function(cb){
+	rimraf(paths.lib + '/**/*', cb);
+});
+
 /* MIN TASKS */
 
 gulp.task("min:js", function() {
@@ -54,3 +60,20 @@ gulp.task("min:css", function() {
 });
 
 gulp.task("min", ["min:js", "min:css"]);
+
+/* COPY BOWER ASSETS TASKS */
+
+gulp.task('jquery', function(){
+	return gulp.src(paths.bower + '/jquery/dist/*.min.js')
+		.pipe(gulp.dest(paths.lib + '/jquery'));
+})
+
+gulp.task('bootstrap', function(){
+	return gulp.src([
+			paths.bower + '/bootstrap/dist/**/*.min.*',
+			paths.bower + '/bootstrap/dist/**/glyphicons*'
+		])
+		.pipe(gulp.dest(paths.lib + '/bootstrap'));
+});
+
+gulp.task('assets:copy', ['assets:clean', 'jquery', 'bootstrap']);
