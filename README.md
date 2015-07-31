@@ -2,5 +2,5 @@
 
 - ASP NET 5 (vNext)
 - MVC 6
-- Visual Studio Code
+- Visual Studio Code (Node / npm / Bower / Gulp)
 - Yeoman
